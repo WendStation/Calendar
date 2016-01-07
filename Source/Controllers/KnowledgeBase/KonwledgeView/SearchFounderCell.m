@@ -22,7 +22,7 @@
         self.backgroundColor = [UIColor whiteColor];
         self.item = [[SearchFounderListItem alloc] init];
         [self.contentView addSubview:self.name];
-        [self.contentView addSubview:self.phone];
+//        [self.contentView addSubview:self.phone];
         [self.contentView addSubview:self.company];
         [self.contentView addSubview:self.segmentLine];
     }

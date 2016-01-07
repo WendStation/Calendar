@@ -159,7 +159,7 @@
             if ([[dict_data objectForKey:@"code"] integerValue] != NETWORK_CODE_SUCCESS) {
                 [AlertManager showAlertText:[dict_data objectForKey:@"message"] withCloseSecond:1];
             }
-            if (!error) {
+            if (!error&&[[dict_data objectForKey:@"code"] integerValue] == NETWORK_CODE_SUCCESS) {
                 succesblock(dict_data);
             } else {
                 failedBlock(error);
