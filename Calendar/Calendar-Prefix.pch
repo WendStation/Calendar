@@ -1,0 +1,55 @@
+//
+// Prefix header for all source files of the 'RDVTabBarController' target in the 'RDVTabBarController' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import <objc/runtime.h>
+    #import "NSManagedObject+helper.h"
+    #import "NSFetchRequest+helper.h"
+    #import "MacroDefinition.h"
+    #import "UIView+Additions.h"
+    #import "NetworkManager.h"
+    #import "CacheManager.h"
+    #import "HJDatabaseManager.h"
+    #import "MJRefresh.h"
+    #import "NSDate+Escort.h"
+    #import "NSDate+Helper.h"
+    #import "UIBarButtonItem+Image.h"
+    #import "NSKeyedUnarchiver+ExceptionCatch.h"
+    #import "UITextField+ImageAndTitle.h"
+    #import "PlistCacheManager.h"
+    #import "MBProgressHUD.h"
+    #import "KxMenu.h"
+    #import "CommonAPI.h"
+    #import "CustomerManager.h"
+    #import "Customer.h"
+    #import "BaseViewController.h"
+    #import "BaseTableViewCell.h"
+    #import "BaseItem.h"
+    #import "NSString+NSStringCategory.h"
+    #import "Masonry.h"
+    #import "CoreActionSheetPicker.h"
+    #import "WriteFilePersistentManager.h"
+    #import "AlertManager.h"
+    #import "HJDatabaseManager.h"
+    #import "HJDatabase.h"
+    #import "FMDatabase.h"
+    #import "FMDatabaseAdditions.h"
+    #import "BaseBlocks.h"
+    #import "UIImageView+AFNetworking.h"
+    #import "RDVTabBarController.h"
+    #import "User.h"
+    #import "EventStoreManager.h"
+    #import "PPLabel.h"
+    #import "UIImageView+WebCache.h"
+    #import "NSString+NSStringCategory.h"
+#endif
