@@ -105,27 +105,37 @@ static const CGFloat textFieldToLeft = 140;
                 }
             }
             else if ([controller isKindOfClass:[AddScheduleViewController class]]) {
-                AddScheduleViewController *view = (AddScheduleViewController *)controller;
-                for (NSIndexPath *index in selected) {
-                    [view.addMember addObject:[[_dataSource objectAtIndex:index.section] objectAtIndex:index.row]];
+                __block AddScheduleViewController *view = (AddScheduleViewController *)controller;
+                if (_lastAllCustomerAry != nil) {
+                    [self.lastAllCustomerAry enumerateObjectsUsingBlock:^(Customer *user, NSUInteger idx, BOOL *stop) {
+                        [view.addMember addObject:user];
+                    }];
                 }
             }
             else if ([controller isKindOfClass:[ScheduleDetailTableViewController class]]) {
-                ScheduleDetailTableViewController *view = (ScheduleDetailTableViewController *)controller;
-                for (NSIndexPath *index in selected) {
-                    [view.addMember addObject:[[_dataSource objectAtIndex:index.section] objectAtIndex:index.row]];
+                __block ScheduleDetailTableViewController *view = (ScheduleDetailTableViewController *)controller;
+                if (_lastAllCustomerAry != nil) {
+                    [self.lastAllCustomerAry enumerateObjectsUsingBlock:^(Customer *user, NSUInteger idx, BOOL *stop) {
+                        [view.addMember addObject:user];
+                    }];
                 }
             }
             else if ([controller isKindOfClass:[AddMeetingViewController class]]) {
-                AddMeetingViewController *view = (AddMeetingViewController *)controller;
+                __block AddMeetingViewController *view = (AddMeetingViewController *)controller;
                 if (_isSelectInvestor) {
                     NSIndexPath *dataIndex = [selected objectAtIndex:0];
                     view.chooseInvestor = [[_dataSource objectAtIndex:dataIndex.section] objectAtIndex:dataIndex.row];
                 }
                 else {
-                    for (NSIndexPath *index in selected) {
-                        [view.addMember addObject:[[_dataSource objectAtIndex:index.section] objectAtIndex:index.row]];
+                    if (_lastAllCustomerAry != nil) {
+                        [self.lastAllCustomerAry enumerateObjectsUsingBlock:^(Customer *user, NSUInteger idx, BOOL *stop) {
+                            [view.addMember addObject:user];
+                        }];
                     }
+                    //是这里的问题，刷新后不能原先的选中的cell不在这个selected里
+//                    for (NSIndexPath *index in selected) {
+//                        [view.addMember addObject:[[_dataSource objectAtIndex:index.section] objectAtIndex:index.row]];
+//                    }
                 }
                 
             }
