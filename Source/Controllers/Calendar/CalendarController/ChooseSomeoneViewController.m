@@ -100,8 +100,8 @@ static const CGFloat textFieldToLeft = 140;
             if ([controller isKindOfClass:[AddProjectViewController class]]) {
                 AddProjectViewController *view = (AddProjectViewController *)controller;
                 if (selected.count == 1) {
-                    NSIndexPath *dataIndex = [selected objectAtIndex:0];
-                    view.customer = [[_dataSource objectAtIndex:dataIndex.section] objectAtIndex:dataIndex.row];
+                    
+                    view.customer = [_lastAllCustomerAry lastObject];
                 }
             }
             else if ([controller isKindOfClass:[AddScheduleViewController class]]) {
@@ -218,6 +218,9 @@ static const CGFloat textFieldToLeft = 140;
         }
     }];
     if (!isExist) {
+        if (!_isMultiSelect) {
+            [self.lastAllCustomerAry removeAllObjects];
+        }
         [self.lastAllCustomerAry addObject:newUser];
     }
     [self.tagScrollView removeAllSubviews];
