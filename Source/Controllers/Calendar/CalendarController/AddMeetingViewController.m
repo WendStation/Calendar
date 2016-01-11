@@ -135,7 +135,7 @@
         return;
     }
     
-    if (![self.scheduleData objectForKey:@"location"]) {
+    if (![self.scheduleData objectForKey:@"location"]||[[self.scheduleData objectForKey:@"location"] isEqualToString:@""]) {
         [AlertManager showAlertText:@"请输入地点" withCloseSecond:1];
         return;
     }

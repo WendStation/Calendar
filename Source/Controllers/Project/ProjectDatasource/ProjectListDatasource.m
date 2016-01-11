@@ -224,6 +224,7 @@
                            };
     NSString *requestUrl = [NSString stringWithFormat:@"%@",ADD_CC_URL];
     [[NetworkManager sharedInstance] postRequest:requestUrl params:para successBlock:^(NSDictionary *dict) {
+        //这里什么意思？
         if ([[dict objectForKey:@"code"] integerValue] != NETWORK_CODE_SUCCESS) {
             [AlertManager showAlertText:@"添加成功!" withCloseSecond:1];
         }

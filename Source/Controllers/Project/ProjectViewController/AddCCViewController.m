@@ -63,7 +63,7 @@
         }
         [self.ds postAddCCInfo:paras succeed:^(NSDictionary *dict) {
             //NSLog(@"%@",dict);
-            [UIView animateWithDuration:0.5 animations:^{
+            [UIView animateWithDuration:1.5 animations:^{
                 [self.navigationController popViewControllerAnimated:YES];
             } completion:nil];
         } failed:^{
